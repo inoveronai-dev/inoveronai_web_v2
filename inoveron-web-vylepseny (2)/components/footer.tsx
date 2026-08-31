@@ -31,7 +31,7 @@ export function Footer() {
         </nav>
 
         <div className="text-center text-xs leading-relaxed text-muted-foreground sm:text-right">
-          <p>© 2026 Inoveron AI. Všetky práva vyhradené.</p>
+          <p>© 2026 Inoveron Automations. Všetky práva vyhradené.</p>
           <a href="mailto:inoveron.ai@gmail.com" className="transition-colors hover:text-cyan">
             inoveron.ai@gmail.com
           </a>
