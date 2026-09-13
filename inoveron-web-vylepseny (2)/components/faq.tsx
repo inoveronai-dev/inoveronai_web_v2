@@ -64,7 +64,7 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
 
 export function Faq() {
   return (
-    <section className="relative overflow-hidden bg-background py-24 sm:py-32">
+    <section className="relative overflow-hidden bg-background py-32 sm:py-44">
       <div className="pointer-events-none absolute right-0 top-1/2 size-96 -translate-y-1/2 translate-x-1/2 rounded-full bg-cyan/5 blur-3xl" />
       <div className="relative mx-auto max-w-3xl px-5 sm:px-8 sm:pl-20">
         <FaqScanner />

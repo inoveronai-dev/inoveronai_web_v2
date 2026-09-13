@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import { MagneticButton } from './magnetic-button'
 
 const links = [
   { label: 'Služby', href: '#services' },
@@ -34,15 +35,15 @@ export function Navbar() {
         }`}
       >
         <a href="#top" className="flex items-center gap-3 transition-opacity hover:opacity-90">
-  <img
-    src="/logo.png"
-    alt="Inoveron AI"
-    className="size-12 rounded-xl object-cover"
-  />
-  <span className="text-xl font-extrabold tracking-wide bg-gradient-brand bg-clip-text text-transparent">
-    INOVERON AI
-  </span>
-</a>
+          <img
+            src="/logo.png"
+            alt="Inoveron AI"
+            className="size-12 rounded-xl object-cover"
+          />
+          <span className="text-xl font-extrabold tracking-wide bg-gradient-brand bg-clip-text text-transparent">
+            INOVERON AI
+          </span>
+        </a>
         <nav className="hidden items-center gap-8 lg:flex">
           {links.map((link) => (
             <a
@@ -56,12 +57,12 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
+          <MagneticButton
             href="tel:+421918326477"
-            className="hidden rounded-lg bg-gradient-brand px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-fuchsia-500/20 transition-transform hover:scale-[1.03] sm:inline-block"
+            className="hidden rounded-lg bg-gradient-brand px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-fuchsia-500/20 sm:inline-block"
           >
             Zavolať
-          </a>
+          </MagneticButton>
           <button
             type="button"
             aria-label={mobileOpen ? 'Zavrieť menu' : 'Otvoriť menu'}

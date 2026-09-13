@@ -1,11 +1,17 @@
+'use client'
+
 import { Mail, Phone } from 'lucide-react'
 import { Reveal } from './reveal'
 import { SignalField } from './motion-visuals'
+import { MagneticButton } from './magnetic-button'
+import { Parallax } from './parallax'
 
 export function CTA() {
   return (
-    <section id="cta" className="relative overflow-hidden cosmic-bg py-28 sm:py-36">
-      <SignalField />
+    <section id="cta" className="relative overflow-hidden cosmic-bg py-36 sm:py-52">
+      <Parallax offset={60}>
+        <SignalField />
+      </Parallax>
       <div className="relative mx-auto max-w-3xl px-5 text-center sm:px-8">
         <Reveal>
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-cyan">
@@ -24,13 +30,13 @@ export function CTA() {
         </Reveal>
         <Reveal delay={0.3}>
           <div className="mt-10 flex justify-center">
-            <a
+            <MagneticButton
               href="tel:+421918326477"
-              className="group inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-8 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-xl shadow-fuchsia-500/30 transition-transform hover:scale-[1.04]"
+              className="group inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-8 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-xl shadow-fuchsia-500/30"
             >
               <Phone className="size-4" />
               Zavolať na bezplatnú konzultáciu
-            </a>
+            </MagneticButton>
           </div>
         </Reveal>
         <Reveal delay={0.4}>
@@ -48,4 +54,3 @@ export function CTA() {
     </section>
   )
 }
- 

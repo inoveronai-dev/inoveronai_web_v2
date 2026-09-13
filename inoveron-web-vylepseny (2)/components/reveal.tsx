@@ -1,11 +1,11 @@
 'use client'
 
-import { motion, type Variants } from 'framer-motion'
-import type { ReactNode } from 'react'
+import { motion, useInView, type Variants } from 'framer-motion'
+import { useRef, type ReactNode } from 'react'
 
 const easeOut = [0.22, 1, 0.36, 1] as const
 
-/** Fade-up on scroll into view. */
+/** Fade-up + CSS blur-to-sharp on scroll into view. */
 export function Reveal({
   children,
   className,
@@ -17,20 +17,24 @@ export function Reveal({
   delay?: number
   y?: number
 }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const inView = useInView(ref, { once: true, margin: '-80px' })
+
   return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.7, delay, ease: easeOut }}
+    <div
+      ref={ref}
+      className={`reveal-cinematic ${inView ? 'is-visible' : ''} ${className ?? ''}`}
+      style={{
+        transitionDelay: `${delay}s`,
+        ['--reveal-y' as string]: `${y}px`,
+      }}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
 
-/** Container that staggers its <RevealItem> children. */
+/** Container that staggers its RevealItem children. */
 export function RevealGroup({
   children,
   className,
@@ -59,5 +63,9 @@ export function RevealGroup({
 
 export const revealItem: Variants = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeOut } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: easeOut },
+  },
 }

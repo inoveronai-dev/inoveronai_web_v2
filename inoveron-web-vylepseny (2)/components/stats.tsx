@@ -103,7 +103,7 @@ function MetricVisual({ type }: { type: string }) {
 
 export function Stats() {
   return (
-    <section id="results" className="relative hex-grid py-24 sm:py-32">
+    <section id="results" className="relative hex-grid py-32 sm:py-44">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="flex justify-center">
           <SectionHeading
@@ -114,7 +114,7 @@ export function Stats() {
           />
         </div>
 
-        <RevealGroup className="mt-16 grid gap-4 sm:grid-cols-3">
+        <RevealGroup className="mt-20 grid gap-8 sm:grid-cols-3">
           {stats.map((s) => (
             <motion.div
               key={s.label}

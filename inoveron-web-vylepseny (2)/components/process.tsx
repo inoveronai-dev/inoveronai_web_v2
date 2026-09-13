@@ -23,7 +23,7 @@ export function Process() {
   const pulseTop = useTransform(lineProgress, [0, 1], ['0%', '100%'])
 
   return (
-    <section ref={sectionRef} id="process" className="relative overflow-hidden bg-background py-24 sm:py-32">
+    <section ref={sectionRef} id="process" className="relative overflow-hidden bg-background py-32 sm:py-44">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="flex justify-center">
           <SectionHeading

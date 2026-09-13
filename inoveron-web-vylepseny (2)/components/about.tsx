@@ -5,6 +5,7 @@ import { CircleCheck, UserRound, TrendingUp } from 'lucide-react'
 import { SectionHeading } from './section-heading'
 import { Reveal, RevealGroup, revealItem } from './reveal'
 import { ScrollConstellation } from './scroll-constellation'
+import { Parallax } from './parallax'
 
 const pillars = [
   {
@@ -26,8 +27,10 @@ const pillars = [
 
 export function About() {
   return (
-    <section id="about" className="relative overflow-clip hex-grid py-24 sm:py-32">
-      <ScrollConstellation variant="human" />
+    <section id="about" className="relative overflow-clip hex-grid py-32 sm:py-44">
+      <Parallax offset={70}>
+        <ScrollConstellation variant="human" />
+      </Parallax>
       <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(7,9,17,.6),rgba(7,9,17,.08)_30%,rgba(7,9,17,.13)_72%,rgba(7,9,17,.7))]" />
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         <div className="flex justify-center">
@@ -45,7 +48,7 @@ export function About() {
             </p>
           </div>
         </Reveal>
-        <RevealGroup className="mt-16 grid gap-6 md:grid-cols-3">
+        <RevealGroup className="mt-20 grid gap-8 md:grid-cols-3">
           {pillars.map((p) => (
             <motion.div
               key={p.title}

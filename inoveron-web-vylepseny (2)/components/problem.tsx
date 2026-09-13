@@ -1,10 +1,13 @@
 import { Reveal } from './reveal'
 import { ScrollConstellation } from './scroll-constellation'
+import { Parallax } from './parallax'
 
 export function Problem() {
   return (
-    <section className="relative flex min-h-[760px] items-center overflow-clip bg-background py-24 sm:py-32">
-      <ScrollConstellation variant="bottleneck" />
+    <section className="relative flex min-h-[760px] items-center overflow-clip bg-background py-32 sm:py-44">
+      <Parallax offset={90}>
+        <ScrollConstellation variant="bottleneck" />
+      </Parallax>
       <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(circle_at_69%_50%,transparent_0%,rgba(7,9,17,.10)_38%,rgba(7,9,17,.67)_82%)]" />
       <div className="relative z-10 mx-auto w-full max-w-4xl px-5 text-center sm:px-8">
           <Reveal>
