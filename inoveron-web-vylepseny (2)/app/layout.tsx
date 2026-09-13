@@ -71,8 +71,7 @@ export default function RootLayout({
     image: 'https://inoveron.com/logo.png',
     description:
       'Navrhujeme a nasadzujeme AI automatizácie, asistentov a interné systémy prispôsobené procesom vašej firmy.',
-    email: 'inoveron.ai@gmail.com',
-    telephone: '+421918326477',
+    email: 'stano@inoveron.com',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'SK',

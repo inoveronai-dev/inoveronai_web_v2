@@ -2,9 +2,9 @@
 
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ChevronDown, Phone, Sparkles } from 'lucide-react'
+import { ChevronDown, Sparkles } from 'lucide-react'
 import { NeuralMorphScene } from './neural-morph-scene'
-import { MagneticButton } from './magnetic-button'
+import { ConsultationCTA } from './consultation-modal'
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -49,13 +49,7 @@ export function Hero() {
           </p>
 
           <div className="hero-enter hero-enter-delay-3 mt-7 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
-            <MagneticButton
-              href="tel:+421918326477"
-              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-brand px-7 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-xl shadow-fuchsia-500/25"
-            >
-              <Phone className="size-4" />
-              Zavolať na bezplatnú konzultáciu
-            </MagneticButton>
+            <ConsultationCTA className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-brand px-7 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-xl shadow-fuchsia-500/25" />
             <a
               href="#services"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-cyan/40 px-7 py-4 text-sm font-semibold text-cyan transition-colors hover:bg-cyan/10"

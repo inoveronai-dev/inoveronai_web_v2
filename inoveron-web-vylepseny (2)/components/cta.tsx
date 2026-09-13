@@ -1,9 +1,9 @@
 'use client'
 
-import { Mail, Phone } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import { Reveal } from './reveal'
 import { SignalField } from './motion-visuals'
-import { MagneticButton } from './magnetic-button'
+import { ConsultationCTA } from './consultation-modal'
 import { Parallax } from './parallax'
 
 export function CTA() {
@@ -29,24 +29,14 @@ export function CTA() {
           </p>
         </Reveal>
         <Reveal delay={0.3}>
-          <div className="mt-10 flex justify-center">
-            <MagneticButton
-              href="tel:+421918326477"
-              className="group inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-8 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-xl shadow-fuchsia-500/30"
+          <div className="mt-10 flex flex-col items-center">
+            <ConsultationCTA className="group inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-8 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-xl shadow-fuchsia-500/30" />
+            <a
+              href="mailto:stano@inoveron.com"
+              className="mt-8 inline-flex items-center justify-center gap-2 text-sm text-muted-foreground transition-colors hover:text-cyan"
             >
-              <Phone className="size-4" />
-              Zavolať na bezplatnú konzultáciu
-            </MagneticButton>
-          </div>
-        </Reveal>
-        <Reveal delay={0.4}>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 text-sm text-muted-foreground sm:flex-row">
-            <a href="tel:+421918326477" className="inline-flex items-center gap-2 transition-colors hover:text-cyan">
-              <Phone className="size-4" /> +421 918 326 477
-            </a>
-            <span className="hidden sm:inline">·</span>
-            <a href="mailto:inoveron.ai@gmail.com" className="inline-flex items-center gap-2 transition-colors hover:text-cyan">
-              <Mail className="size-4" /> inoveron.ai@gmail.com
+              <Mail className="size-4" />
+              stano@inoveron.com
             </a>
           </div>
         </Reveal>

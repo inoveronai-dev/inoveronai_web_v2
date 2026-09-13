@@ -95,6 +95,17 @@
     --spot-y: 50%;
   }
 
+  .consult-input {
+    @apply w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground outline-none transition-[border-color,box-shadow] placeholder:text-muted-foreground/70;
+  }
+
+  .consult-input:focus {
+    border-color: color-mix(in oklab, var(--cyan) 55%, transparent);
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--cyan) 35%, transparent),
+      0 0 24px -8px color-mix(in oklab, var(--grad-2) 45%, transparent);
+  }
+
   .hero-enter {
     animation: hero-enter 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
   }

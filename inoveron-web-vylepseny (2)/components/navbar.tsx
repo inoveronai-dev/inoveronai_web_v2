@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import { MagneticButton } from './magnetic-button'
+import { ConsultationCTA, useConsultation } from './consultation-modal'
 
 const links = [
   { label: 'Služby', href: '#services' },
@@ -16,6 +16,7 @@ export function Navbar() {
   const { scrollY } = useScroll()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { open } = useConsultation()
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setScrolled(latest > 24)
@@ -57,12 +58,10 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <MagneticButton
-            href="tel:+421918326477"
+          <ConsultationCTA
+            showIcon={false}
             className="hidden rounded-lg bg-gradient-brand px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-fuchsia-500/20 sm:inline-block"
-          >
-            Zavolať
-          </MagneticButton>
+          />
           <button
             type="button"
             aria-label={mobileOpen ? 'Zavrieť menu' : 'Otvoriť menu'}
@@ -94,13 +93,16 @@ export function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="tel:+421918326477"
-                onClick={() => setMobileOpen(false)}
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileOpen(false)
+                  open()
+                }}
                 className="mt-2 rounded-lg bg-gradient-brand px-4 py-3 text-center text-sm font-bold uppercase tracking-wide text-white"
               >
-                Zavolať na konzultáciu
-              </a>
+                Dohodnúť konzultáciu
+              </button>
             </div>
           </motion.nav>
         )}

@@ -13,6 +13,7 @@ import { ScrollConstellation } from './scroll-constellation'
 import { SpotlightCard } from './spotlight-card'
 import { Parallax } from './parallax'
 import { Reveal } from './reveal'
+import { useConsultation } from './consultation-modal'
 
 const services = [
   {
@@ -83,6 +84,8 @@ function ServiceCard({
 }
 
 export function Services() {
+  const { open } = useConsultation()
+
   return (
     <section id="services" className="relative overflow-clip hex-grid py-32 sm:py-44">
       <Parallax offset={70}>
@@ -103,12 +106,13 @@ export function Services() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <a
-            href="tel:+421918326477"
+          <button
+            type="button"
+            onClick={open}
             className="inline-flex items-center gap-2 rounded-xl border border-border px-6 py-3 text-sm font-medium text-muted-foreground transition-colors hover:border-cyan/40 hover:text-cyan"
           >
             Prekonzultovať vhodné riešenie →
-          </a>
+          </button>
         </div>
       </div>
     </section>

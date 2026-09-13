@@ -32,8 +32,8 @@ export function Footer() {
 
         <div className="text-center text-xs leading-relaxed text-muted-foreground sm:text-right">
           <p>© 2026 Inoveron Automations. Všetky práva vyhradené.</p>
-          <a href="mailto:inoveron.ai@gmail.com" className="transition-colors hover:text-cyan">
-            inoveron.ai@gmail.com
+          <a href="mailto:stano@inoveron.com" className="transition-colors hover:text-cyan">
+            stano@inoveron.com
           </a>
         </div>
       </div>
