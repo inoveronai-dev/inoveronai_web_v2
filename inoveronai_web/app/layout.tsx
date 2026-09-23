@@ -71,7 +71,7 @@ export default function RootLayout({
     image: 'https://inoveron.com/logo.png',
     description:
       'Navrhujeme a nasadzujeme AI automatizácie, asistentov a interné systémy prispôsobené procesom vašej firmy.',
-    email: 'stano@inoveron.com',
+    email: 'office@inoveron.com',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'SK',

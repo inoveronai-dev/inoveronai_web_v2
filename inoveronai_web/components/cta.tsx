@@ -32,11 +32,11 @@ export function CTA() {
           <div className="mt-10 flex flex-col items-center">
             <ConsultationCTA className="group inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-8 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-xl shadow-fuchsia-500/30" />
             <a
-              href="mailto:stano@inoveron.com"
+              href="mailto:office@inoveron.com"
               className="mt-8 inline-flex items-center justify-center gap-2 text-sm text-muted-foreground transition-colors hover:text-cyan"
             >
               <Mail className="size-4" />
-              stano@inoveron.com
+              office@inoveron.com
             </a>
           </div>
         </Reveal>

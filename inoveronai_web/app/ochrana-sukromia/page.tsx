@@ -54,11 +54,11 @@ export default function PrivacyPage() {
             <section>
               <h2 className="font-display text-xl font-semibold text-foreground">Kontakt</h2>
               <a
-                href="mailto:stano@inoveron.com"
+                href="mailto:office@inoveron.com"
                 className="mt-3 inline-flex items-center gap-2 font-semibold text-cyan transition-opacity hover:opacity-75"
               >
                 <Mail className="size-4" />
-                stano@inoveron.com
+                office@inoveron.com
               </a>
             </section>
           </div>
