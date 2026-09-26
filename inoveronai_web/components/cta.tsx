@@ -1,6 +1,6 @@
 'use client'
 
-import { Mail } from 'lucide-react'
+import { Mail, ShieldCheck } from 'lucide-react'
 import { Reveal } from './reveal'
 import { SignalField } from './motion-visuals'
 import { ConsultationCTA } from './consultation-modal'
@@ -31,9 +31,13 @@ export function CTA() {
         <Reveal delay={0.3}>
           <div className="mt-10 flex flex-col items-center">
             <ConsultationCTA className="group inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-8 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-xl shadow-fuchsia-500/30" />
+            <p className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-cyan/90">
+              <ShieldCheck className="size-4 shrink-0" strokeWidth={1.8} />
+              Garancia vrátenia peňazí, ak nebudete spokojní.
+            </p>
             <a
               href="mailto:office@inoveron.com"
-              className="mt-8 inline-flex items-center justify-center gap-2 text-sm text-muted-foreground transition-colors hover:text-cyan"
+              className="mt-6 inline-flex items-center justify-center gap-2 text-sm text-muted-foreground transition-colors hover:text-cyan"
             >
               <Mail className="size-4" />
               office@inoveron.com
