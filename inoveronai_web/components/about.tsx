@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CircleCheck, UserRound, TrendingUp } from 'lucide-react'
+import { CircleCheck, UserRound, TrendingUp, ShieldCheck } from 'lucide-react'
 import { SectionHeading } from './section-heading'
 import { Reveal, RevealGroup, revealItem } from './reveal'
 import { ScrollConstellation } from './scroll-constellation'
@@ -69,6 +69,15 @@ export function About() {
             </motion.div>
           ))}
         </RevealGroup>
+
+        <Reveal delay={0.15}>
+          <div className="mx-auto mt-10 flex max-w-3xl items-center justify-center gap-3 rounded-2xl border border-cyan/40 bg-cyan/10 px-6 py-5 text-center shadow-[0_0_40px_-16px_var(--cyan)] backdrop-blur-md sm:gap-4 sm:px-8">
+            <ShieldCheck className="size-7 shrink-0 text-cyan sm:size-8" strokeWidth={1.7} />
+            <p className="font-display text-base font-semibold leading-snug text-foreground sm:text-lg">
+              Garancia vrátenia peňazí — ak nebudete spokojní, vrátime vám investíciu.
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   )
