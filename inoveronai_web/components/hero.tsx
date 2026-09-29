@@ -40,7 +40,7 @@ export function Hero() {
           <div className="hero-enter hero-enter-delay-1 mt-6 inline-flex w-fit items-center gap-3 rounded-2xl border border-cyan/45 bg-card/70 px-5 py-3.5 shadow-[0_0_42px_-14px_var(--cyan)] backdrop-blur-xl sm:mt-7 sm:px-6">
             <Sparkles className="size-5 shrink-0 text-cyan" />
             <p className="font-display text-sm font-bold uppercase tracking-[0.1em] text-foreground sm:text-base">
-              Skúsenosti z <span className="text-gradient text-2xl sm:text-3xl">15+</span> firemných projektov
+              Skúsenosti z <span className="text-gradient text-2xl sm:text-3xl">20+</span> firemných projektov
             </p>
           </div>
 
