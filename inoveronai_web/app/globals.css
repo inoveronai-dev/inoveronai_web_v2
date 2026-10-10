@@ -160,6 +160,130 @@
     }
   }
 
+  /* Trust logos — atmospheric wash, no solid panel */
+  .logo-trust {
+    background: transparent;
+  }
+
+  .logo-trust-atmosphere {
+    background:
+      /* soft cyan core behind the marks */
+      radial-gradient(
+        ellipse 58% 48% at 50% 58%,
+        oklch(0.72 0.13 210 / 0.13),
+        oklch(0.55 0.1 220 / 0.05) 42%,
+        transparent 68%
+      ),
+      /* translucent navy veil — lighter than solid bg */
+      radial-gradient(
+        ellipse 95% 75% at 50% 50%,
+        oklch(0.22 0.04 250 / 0.38),
+        oklch(0.18 0.03 250 / 0.12) 55%,
+        transparent 78%
+      ),
+      /* gentle vertical falloff so edges dissolve */
+      linear-gradient(
+        to bottom,
+        transparent 0%,
+        oklch(0.2 0.035 245 / 0.22) 28%,
+        oklch(0.2 0.035 245 / 0.28) 52%,
+        oklch(0.2 0.035 245 / 0.18) 78%,
+        transparent 100%
+      );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      #000 16%,
+      #000 84%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      #000 16%,
+      #000 84%,
+      transparent 100%
+    );
+  }
+
+  .logo-marquee {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 12%,
+      #000 88%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 12%,
+      #000 88%,
+      transparent 100%
+    );
+  }
+
+  @media (min-width: 640px) {
+    .logo-marquee {
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        #000 16%,
+        #000 84%,
+        transparent 100%
+      );
+      mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        #000 16%,
+        #000 84%,
+        transparent 100%
+      );
+    }
+  }
+
+  @keyframes logo-marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .logo-marquee-track {
+    animation: logo-marquee 150s linear infinite;
+    will-change: transform;
+  }
+
+  .logo-marquee:hover .logo-marquee-track {
+    animation-play-state: paused;
+  }
+
+  .logo-mark {
+    height: calc(2.7rem * var(--logo-scale, 1));
+    opacity: 0.94;
+    transition: opacity 280ms ease;
+  }
+
+  @media (min-width: 640px) {
+    .logo-mark {
+      height: calc(3.4rem * var(--logo-scale, 1));
+    }
+  }
+
+  .logo-mark:hover {
+    opacity: 1;
+  }
+
+  .logo-tone-soft {
+    filter: brightness(1.08) contrast(1.03);
+  }
+
+  .logo-tone-lift {
+    filter: brightness(1.22) contrast(1.05) saturate(1.03);
+  }
+
   /* Cosmic + circuit backdrop layers */
   .cosmic-bg {
     background-color: var(--background);
@@ -204,6 +328,11 @@
   .hero-enter {
     animation: none;
     opacity: 1;
+    transform: none;
+  }
+
+  .logo-marquee-track {
+    animation: none;
     transform: none;
   }
 

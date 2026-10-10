@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ChevronDown, Sparkles } from 'lucide-react'
+import { Sparkles } from 'lucide-react'
 import { NeuralMorphScene } from './neural-morph-scene'
 import { ConsultationCTA } from './consultation-modal'
 
@@ -14,7 +14,6 @@ export function Hero() {
   })
   const contentY = useTransform(scrollYProgress, [0, 0.84, 1], [0, 0, -72])
   const contentOpacity = useTransform(scrollYProgress, [0, 0.86, 0.99], [1, 1, 0.08])
-  const scrollHintOpacity = useTransform(scrollYProgress, [0, 0.09], [1, 0])
 
   return (
     <section
@@ -25,7 +24,7 @@ export function Hero() {
       <div className="sticky top-0 h-svh overflow-hidden cosmic-bg">
         <NeuralMorphScene sectionRef={sectionRef} />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(7,9,17,.82)_0%,rgba(7,9,17,.28)_42%,rgba(7,9,17,.02)_72%)] max-lg:bg-[linear-gradient(180deg,rgba(7,9,17,.42),rgba(7,9,17,.62))]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-background from-20% via-background/65 to-transparent" />
 
         <motion.div
           className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-5 pb-14 pt-24 sm:px-8 sm:pb-20 sm:pt-28"
@@ -59,16 +58,6 @@ export function Hero() {
           </div>
         </motion.div>
 
-        <motion.div
-          className="absolute inset-x-0 bottom-7 flex flex-col items-center gap-2 text-[10px] font-bold uppercase tracking-[0.24em] text-cyan/75"
-          style={{ opacity: scrollHintOpacity }}
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-          aria-hidden="true"
-        >
-          Prebuďte sieť
-          <ChevronDown className="size-5" />
-        </motion.div>
       </div>
     </section>
   )

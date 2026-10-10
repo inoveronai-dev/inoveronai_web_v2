@@ -1,5 +1,6 @@
 import { Navbar } from '@/components/navbar'
 import { Hero } from '@/components/hero'
+import { LogoCarousel } from '@/components/logo-carousel'
 import { Problem } from '@/components/problem'
 import { Services } from '@/components/services'
 import { Process } from '@/components/process'
@@ -18,6 +19,7 @@ export default function Page() {
         <Navbar />
         <main id="main-content">
           <Hero />
+          <LogoCarousel />
           <Problem />
           <Services />
           <Process />
